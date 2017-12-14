@@ -1,0 +1,47 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Confirmation the Creation of the product</h3>
+
+            <p>
+                Id will be: <q>{{product.id }}</q><br>
+                <br>
+                Description will be:<q> {{product.description}}</q><br>
+                <br>
+                Price will be: <q>€{{product.price }}</q>
+            </p>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "bottom">
+
+            <p>
+                <a style="color: coral" href="/index.php?action=showProducts">Back to Products Page</a>
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+body
+{
+    background-color: darkgrey;
+}
+
+h2, h3, h4
+{
+    font-family: Verdana, Georgia, serif, times new roman;
+    text-align:center;
+}
+
+h2
+{
+    font-size: 24px;
+    font-style: normal;
+    color: #b23434;
+}
+
+h3
+{
+    font-style: italic;
+    font-size: 18px;
+    color: #9f2d2d;                            /* dark creme colour */
+}
+
+h4
+{
+    font-size: 16px;
+    color: #d87474;                            /* light creme colour */
+}
+
+a:visited
+{
+    color: #9f2d2d;                            /* normal links turns once its visited */
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:link
+{
+    color: deepskyblue;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover
+{
+    color: cadetblue;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+p
+{
+    font-family: cursive;
+    text-align:center;
+}
+
+table, th, td
+{
+    font-family: cursive;
+    border: 2px solid darkslategrey;
+    border-collapse: collapse;
+    margin: auto;
+    background-color: #99cc99;                 /* Complementary of slightly-darker "Dark-sea-green*/
+    text-align: center;
+    color: #4d4dff;                            /* lighter blue*/
+}
+
+th
+{
+    padding-left: 2em;
+    padding-right: 2em;
+
+}
+
+td
+{
+    background-color: white;
+}
+
+td img
+{
+    height: 150px;
+    width: 150px;
+    padding: 0.5em;
+}
+
+#titleRow
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #8fbc8f;                 /* Slightly Darker "Dark-sea-green*/
+}

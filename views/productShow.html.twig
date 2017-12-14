@@ -1,0 +1,45 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == '' %}
+
+    {% block accountPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Product details:</h3>
+
+            <p>
+                Id is: <q>{{product.id }}</q><br>
+                <br>
+                Description is:<q> {{product.description}}</q><br>
+                <br>
+                Price will be: <q>€{{product.price }}</q><br>
+                <br>
+                <br>
+                {#  Will go back a page #}
+                <input type="button" onclick="history.go(-1)" value="Go Back">
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}

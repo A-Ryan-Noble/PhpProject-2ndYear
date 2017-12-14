@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title> {{ pageTitle }} </title>
+
+    <style>
+        @import "css/sheet1.css";
+        @import "css/layout.css";
+        @import "css/columns.css";
+    </style>
+
+    <script> // Java Script for table on the Merchandise page
+
+        var total;
+
+        function calculate()
+        {
+            //  Item 1 total found & calculated
+            var carnivalAmount = document.getElementById("carnivalAmount").value;
+            var carnivalTotal = carnivalAmount * 23.99;
+            var carnivalTotal2 = carnivalTotal.toFixed(2);
+
+            //  Item 2 total found & calculated
+            var dollAmount = document.getElementById("dollAmount").value;
+            var dollTotal = dollAmount * 23.99;
+            var dollTotal2 = dollTotal.toFixed(2);
+
+            //  Item 3 total found & calculated
+            var keyAmount = document.getElementById("keyAmount").value;
+            var keyTotal = keyAmount * 19.99;
+            var keyTotal2 = keyTotal.toFixed(2);
+
+            //  Item 4 total found & calculated
+            var lateGuestAmount = document.getElementById("lateGuestAmount").value;
+            var lateGuestTotal = lateGuestAmount*23.99;
+            var lateGuestTotal2 = lateGuestTotal.toFixed(2);
+
+            //  Item 5 total found & calculated
+            var FacesTourTAmount = document.getElementById("FacesTourTAmount").value;
+            var FacesTourTotal = FacesTourTAmount * 23.99;
+            var FacesTourTotal2 = FacesTourTotal.toFixed(2);
+
+            //  Item 6 total found & calculated
+            var TyeDyeAmount = document.getElementById("TyeDyeAmount").value;
+            var TyeDyeTotal = TyeDyeAmount * 29.99;
+            var TyeDyeTotal2 = TyeDyeTotal.toFixed(2);
+
+            //  Overall total found & calculated
+            total = carnivalTotal + dollTotal + keyTotal + lateGuestTotal + FacesTourTotal + TyeDyeTotal;
+            total = total.toFixed(2);
+
+            document.getElementById("TotalAmount").value = '\u20AC'+ total;
+        }
+
+        function alertUser()
+        {
+            if ((total !== null) && (total > 0.00))
+            {
+                alert("Your total is: " + '\u20AC' + total);
+
+                var choice = confirm("Proceed with Purchase?");
+
+                //  Response to the question
+                if (choice === true)
+                {
+                    alert("Items will be added to cart");
+
+                    {% if username == '' %} // This will only occur if there isn't a username set
+
+                    alert("You must be have a user account");
+
+                    location.assign("/index.php?action=accountCreation");   // Goes to accounts via Browser Object Model (BOM)
+
+                    {% endif %}
+                }
+
+                else
+                {
+                    choice = confirm("Reset Page?");
+
+                    if (choice === true)  //  Response to the question
+                    {
+                        alert("Page will reset");
+                        resetPage();  // Page reset via(BOM)
+                    }
+                }
+            }
+
+            else    //  If no value selected or value is 0
+            {
+                alert("Please select an item for each item to purchase, before you try submitting it");
+            }
+        }
+
+        function resetPage()
+        {
+            window.location.reload(); // Reloads the page via Browser Object Model (BOM)
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div id= "header">
+
+    <header>
+
+        {{ heading }}
+
+        <a name="top"></a>
+
+    </header>
+
+</div>
+
+<nav>
+    <section class = "mainBar">
+
+        <ul>
+
+            <li><a href="/" class="{% block homePage %}{% endblock %}"> Home</a></li>
+            <li><a href="/index.php?action=about" class="{% block aboutPage %}{% endblock %}"> About</a></li>
+            <li><a href="/index.php?action=gallery" class="{% block galleryPage %}{% endblock %}"> Gallery</a></li>
+            <li><a href="/index.php?action=music" class="{% block musicPage %}{% endblock %}"> Music</a></li>
+            <li><a href="/index.php?action=social" class="{% block socialPage %}{% endblock %}"> Socials</a></li>
+            <li><a href="/index.php?action=merchandise" class="{% block merchandisePage %}{% endblock %}"> Merchandise</a></li>
+            <li><a href="/index.php?action=siteMap" class="{% block siteMapPage %}{% endblock %}"> Site Map</a></li>
+
+            {% if username == 'admin' %}
+
+                <li><a href="/index.php?action=loggedIn" class="{% block adminAccountsPage %}{% endblock %}"> Admin Account</a></li>
+
+            {% elseif username == 'staff' %}
+
+                <li><a href="/index.php?action=loggedIn" class="{% block staffAccountsPage %}{% endblock %}"> Staff Account</a></li>
+
+            {% else %}
+
+                <li><a href="/index.php?action=showProducts2" class="{% block accountPage %}{% endblock %}"> Account</a></li>
+
+
+                <li><a href="/index.php?action=accountCreation" class="{% block accountsPage %}{% endblock %}">Create Account</a></li>
+
+            {% endif %}
+
+        </ul>
+
+    </section>
+
+    <section class = "accountsBar">
+
+        {% if username == 'admin' %}
+
+            <span>Logged in as: <strong id="user"> {{ username }} </strong><a href="/index.php?action=processLogout" style="padding-left: 40px">logout</a></span>
+
+        {% elseif username == 'staff' %}
+
+            <span>Logged in as: <strong id="user"> {{ username }} </strong><a href="/index.php?action=processLogout" style="padding-left: 40px">logout</a></span>
+
+        {% elseif username == 'visitor' %}
+
+            <span>Logged in as: <strong id="user"> {{ username }} </strong><a href="/index.php?action=processLogout" style="padding-left: 40px">logout</a></span>
+
+        {%  else %}
+
+            <form method ="post" action="/index.php?action=processLogin">
+                <input type="hidden" name="action" value="processLogin">
+
+                <span style="padding-right:30px">UserName:<input type = "text" name="username" id="username" placeholder = "Enter Username" required ></span>
+                <span style="padding-right:30px">Password:<input type = "password" name="password" id ="password" placeholder="Enter Password" required></span>
+                <span style="padding-right:30px"><input type = "submit" value = "Login"></span>
+
+            </form>
+
+        {% endif %}
+
+    </section>
+
+</nav>
+
+{% block main %}
+
+{% endblock %}
+
+</body>
+
+<footer>
+    <div id= "footer">
+        <p> Created by ITB Student (educational purposes ONLY)</p>
+        <p class="middled"><a href="#top" style="color: darkseagreen;">Back To Top</a></p>
+        <p class= "copyright"> Copyrights goes to their rightful owners </p>
+    </div>
+</footer>
+
+</html>

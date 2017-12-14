@@ -1,0 +1,60 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "top">
+
+            <h4>Updated Admin is :</h4>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "top-Left">
+
+            <p>
+                The <strong style="color: red"> NEW </strong> details <br> are as follows:<br>
+            </p>
+        </section>
+
+        <section class="top-Right">
+
+            <p>
+                I.D: <q>{{ id }}</q>.<br>
+                Name: <q>{{ aName }}</q><br>
+                Password: <q>{{ aPassword }}</q><br>
+            </p>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "bottom">
+
+            <p>
+                <a style="color: coral" href="/index.php?action=showAdmin">Back to Admin Page</a>
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}

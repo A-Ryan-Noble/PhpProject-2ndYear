@@ -1,0 +1,44 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Confirm the edit of Staff member with the following details: </h3>
+
+            <form method="post" action="/index.php?action=staffUpdate">
+                <input type="hidden" name="action" value="staffUpdate">
+
+                <p>
+                    Id is: <input type="text" name="id" value="{{ staff.id }}" readonly>
+                <p>
+                    Name is: <input type="text" name="aName" value="{{ staff.aName }}">
+                </p>
+
+                <p>
+                    Password is:  <input type="text" name="aPassword" value="{{ staff.aPassword }}">
+                </p>
+
+                <input type="submit" value="Update">
+
+            </form>
+
+        </section>
+
+    </div>
+
+{% endblock %}

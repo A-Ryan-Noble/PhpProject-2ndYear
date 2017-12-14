@@ -1,0 +1,30 @@
+{% extends '_template.html.twig' %}
+
+{% block accountsPage %} current_page {% endblock %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Confirmation the Creation of the Visitor</h3>
+
+            <p>
+                Name will be:<q> {{ name }}</q><br>
+                <br>
+                Email Address will be: <q>{{ emailAddress }}</q><br>
+                <br>
+                Password will be: <q>{{ passWord }}</q><br>
+                <br>
+                Receive Emails: <q>{{ emailNotified }}</q>
+            </p>
+
+            <input type="button" value="Confirm Details" onclick= "location.href='index.php?action=successfullyCreated'">
+
+            <span style ="padding-left: 50px"><input type="button" value="Go back" onclick="history.go(-1)"></span>
+        </section>
+
+    </div>
+
+{% endblock %}

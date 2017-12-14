@@ -1,0 +1,50 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Edit the product with the following id: </h3>
+
+            <form method="post" action="/index.php?action=productUpdate">
+                <input type="hidden" name="action" value="productUpdate">
+
+                <p>
+                    Id is: <input type="text" name="id" value="{{ product.id }}" readonly>
+                </p>
+
+                <p>
+                    Picture location is: <input type="text" name="image" value="{{ product.image }}">
+                </p>
+
+                <p>
+                    Description is: <input type="text" name="description" value="{{ product.description }}">
+                </p>
+
+                <p>
+                    Price is: <input type="number" min="0" step="0.01" name="price" placeholder="0.00" value="{{ product.price }}">
+                </p>
+
+                <input type="submit" value="Update">
+
+            </form>
+
+        </section>
+
+    </div>
+
+{% endblock %}

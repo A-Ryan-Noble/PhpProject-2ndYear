@@ -1,0 +1,80 @@
+.column_container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column_container section.top, .left_side, .middle, .right
+{
+    flex: 1;
+    background-color: lavender;
+    border: 2px solid #4d4d4d;
+    padding: 1rem;
+    text-align: center;
+    list-style: square;                     /* bullet points become squares*/
+}
+
+.column_container section.top
+{
+    background-color: #aaaaee;              /* very-light purple-blue colour */
+    border-top: none;
+    border-bottom: none;
+}
+
+.column_container section.top-Left, .top-Right, .bottom
+{
+    flex: 1;
+    background-color: lavender;
+    border: 2px solid #4d4d4d;
+    padding: 1rem;
+    text-align: center;
+}
+
+.column_container section.top-Left
+{
+    border-right:dashed;
+    border-bottom:dashed;
+}
+
+.column_container section.top-Right
+{
+    border-left:none;
+    border-bottom:dashed;
+}
+
+.column_container section.bottom
+{
+    border-top: none;
+}
+
+.column_container section.photo
+{
+    flex: 1 0 200px;
+    background-color: lavender;
+    border: 0.1rem solid #4d4d4d;          /* dark grey colour*/
+    padding: 0.5rem;
+    text-align:center;
+}
+
+.photograph img
+{
+    max-width: 270px;
+    max-height: 270px;
+    float: right;
+    border: 0.2rem dashed darkslategrey;
+    padding: 5px;
+}
+
+.photo img
+{
+    max-width: 200px;
+    max-height: 200px;
+    border: 0.2rem dashed darkslategrey;
+}
+
+.center li
+{
+    text-align: center;
+    list-style-position: inside;
+}

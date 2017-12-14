@@ -1,0 +1,61 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'visitor' %}
+
+    {% block visitorAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    {% if username == 'admin' %}
+        <div class = "column_container">
+
+            <section class = "top">
+
+                <h2><a href="/index.php?action=refreshDatabases" style="color: red"> Click to <id style="text-transform: uppercase;text-decoration: underline">reset</id> all databases </a></h2>
+
+            </section>
+
+        </div>
+    {% endif %}
+
+    <div class="column_container">
+
+        <section class = "left_side">
+
+            <h3>Logged in as a member of: <id style="text-transform: capitalize"> {{ username }} </id></h3>
+
+            {% if username == 'staff' %}
+
+                <h3><a href="/index.php?action=showProducts"> Show Products </a></h3>
+
+                <h3><a href="/index.php?action=showVisitor"> Show Visitors </a></h3>
+
+            {% elseif username == 'admin' %}
+
+                <h3><a href="/index.php?action=showStaff"> Show Staff </a></h3>
+
+                <h3><a href="/index.php?action=showVisitor"> Show Visitors </a></h3>
+
+                <h3><a href="/index.php?action=showAdmin"> Show Admin </a></h3>
+
+            {% endif %}
+
+        </section>
+
+    </div>
+
+{% endblock %}

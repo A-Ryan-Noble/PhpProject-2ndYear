@@ -1,0 +1,54 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "top">
+
+            <h4>Enter details of the new Products:</h4>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <form method="post" action="/index.php?action=productCreate">
+                <input type="hidden" name="action" value="productCreate">
+
+                <p>
+                    Image : <input type="file" name="productImage">
+                </p>
+
+                <p>
+                    Description: <input type="text" name="productDescription" autofocus required>
+                </p>
+
+                <p>
+                    Price(€): <input type="number" name="productPrice" placeholder="0.00" min = "0" required pattern="[0-9]" step="0.01">
+                </p>
+
+                <input type="submit" value="Create">
+
+            </form>
+
+        </section>
+
+    </div>
+
+{% endblock %}

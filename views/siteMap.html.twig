@@ -1,0 +1,31 @@
+{% extends '_template.html.twig' %}
+
+{% block siteMapPage %} current_page {% endblock %}
+
+{% block main %}
+
+    <div class="column_container">
+
+        <section class = "left_side">
+
+            <h4>Site map selection:</h4>
+
+            <ul style = "list-style-type: none; font-size: 18px">
+                <li><a href = "/">Home Page</a></li>
+                <br>
+                <li><a href = "/index.php?action=about">About Page</a></li>
+                <br>
+                <li><a href="/index.php?action=gallery"> Gallery</a></li>
+                <br>
+                <li><a href="/index.php?action=music"> Music</a></li>
+                <br>
+                <li><a href = "/index.php?action=social">Bands Social's Page</a></li>
+                <br>
+                <li><a href = "/index.php?action=merchandise">Merchandise Page</a></li>
+            </ul>
+
+        </section>
+
+    </div>
+
+{% endblock %}

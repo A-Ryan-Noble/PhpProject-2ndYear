@@ -1,0 +1,48 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <h3>Confirmation the Creation of the Staff member</h3>
+
+            <p>
+                Id will be: <q>{{ id }}</q><br>
+                <br>
+                Name will be:<q> {{aName }}</q><br>
+                <br>
+                Password will be: <q>{{ aPassword }}</q>
+
+            </p>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "bottom">
+
+            <p>
+                <a style="color: coral" href="/index.php?action=showStaff">Back to Staff Page</a>
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}

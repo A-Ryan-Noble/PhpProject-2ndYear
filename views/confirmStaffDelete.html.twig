@@ -1,0 +1,49 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "top">
+
+            <h3>Staff member has been deleted</h3>
+
+        </section>
+
+    </div>
+
+        <section class="top-Right">
+
+            <p>
+                The Staff member has been deleted from the database,<br> click the link to view the remaining database.
+            </p>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "bottom">
+
+            <p>
+                <a style="color: coral" href="/index.php?action=showStaff">Back to Staff Page</a>
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}

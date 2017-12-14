@@ -1,0 +1,38 @@
+Images:
+	1. About:
+		1. band.jpg:						http://www.biffyclyro.com/news,new-shows-announced-for-netherlands_1760.htm
+		2. group_shoot.jpg					http://www.nme.com/news/music/biffy-clyro-new-album-1871090
+
+	2. Gallery:
+		1. Simon_Neil.jpg:					http://www.able2uk.com/news/music/biffy-singer-struggled-red-mental-health
+		2. James_Johnston.jpg:					https://www.famousbirthdays.com/people/james-johnston-bassist.html
+		3. Ben_Johnston.jpg:					https://www.famousbirthdays.com/people/ben-johnston-drummer.html
+		4. albumCover_Only_Revolutions.jpg:			http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+		5. albumCover_Puzzle.jpg:				http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+		6. albumCover_Blackened_Sky.jpg:			http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+
+	3. Music:	
+		1. albumCover_Only_Revolutions.jpg:			http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+		2. albumCover_Puzzle.jpg:				http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+		3. albumCover_Blackened_Sky.jpg:			http://www.nme.com/blogs/nme-blogs/biffy-clyro-rank-the-albums-758924
+
+	4. Social websites:	
+		1. band_twitter_profile.jpg:				https://twitter.com/BiffyClyro?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+		2. band_instagram_profile.jpg:				https://www.instagram.com/biffy_clyro/?hl=en
+
+	5. Store items:
+		1. carnival_T-Shirt.jpg:				http://store.biffyclyro.com/eu
+		2. doll_T-Shirt.jpg:					http://store.biffyclyro.com/eu
+		3. official_Biffytartan_Key_Ring.jpg:			http://store.biffyclyro.com/eu
+		4. late_Guests_T-Shirt.jpg:				http://store.biffyclyro.com/eu
+		5. faces_Tour_T-Shirt.jpg:				http://store.biffyclyro.com/eu
+		6. mon_The_Biff_Tye_Dye_T-Shirt.jpg:			http://store.biffyclyro.com/eu
+
+Text:
+	1. About the band:						https://en.wikipedia.org/wiki/Biffy_Clyro
+
+	2. Band's Twitter:						https://twitter.com/BiffyClyro?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+
+	3. Band's Instagram:						https://www.instagram.com/biffy_clyro/?hl=en
+
+	4. Band's website:						https://www.instagram.com/biffy_clyro/?hl=en

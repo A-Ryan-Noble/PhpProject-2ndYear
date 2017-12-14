@@ -1,0 +1,115 @@
+#header
+{
+    background-color: #2d6886;
+    border: 3px solid firebrick;
+    border-bottom: none;
+    padding: 1rem;
+    color: white;
+    text-align:center;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+nav, nav.accountsBar
+{
+    border: 3px solid firebrick;
+    border-top: 2px dashed indianred;
+    padding: 6px;
+    background-color: #2d6886;
+    font-family:Verdana, Arial, sans-serif;
+    text-align:center;
+}
+
+nav ul li
+{
+    display: inline;                /* one bar across*/
+    list-style-type:none;           /* removes the list apperance */
+    text-decoration: none;
+    color: white;
+}
+
+nav a:link
+{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:visited
+{
+    color: yellow; /* nav turns once it's visited */
+    text-decoration: none;
+}
+nav a:hover
+{
+    color: lawngreen;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+nav a.current_page
+{
+    color: lightgreen;
+    font-style: italic;
+}
+nav .accountsBar
+{
+    color: #d87474;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav .accountsBar span a:link
+{
+    font-size: 18px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+nav .accountsBar span a:hover
+{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+#footer
+{
+    display: flex;
+    border:3px solid firebrick;
+    padding: 1rem;
+    background-color: #2d6886; /* nav blue */
+}
+
+#footer p
+{
+    flex:1;
+    color: white;
+    font-style: italic;
+}
+
+#p.middled
+{
+    text-align: center;
+}
+
+#p.copyright
+{
+    font-style: normal;
+    text-align: right;
+}
+
+.accountsBar
+{
+    border-top: 2px dashed indianred;
+}
+
+#user
+{
+    text-transform: capitalize;
+    color:dodgerblue;
+}
+
+#padRight
+{
+    padding-left:10px;
+}

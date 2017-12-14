@@ -1,0 +1,73 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+    <div class = "column_container">
+
+        <section class = "left_side">
+
+            <h2>Staff:</h2>
+
+            {#  Will go back to the  logged in page   #}
+            <p>
+                <a href="/index.php?action=loggedIn">Go Back to {{ username }}  page</a>
+            </p>
+
+            <table>
+
+                <tr>
+                    <th id="titleRow">ID</th>
+                    <th id="titleRow"> Name</th>
+                    <th  id="titleRow">Password</th>
+
+                    {% if username == 'admin' %}
+                        <th id="titleRow">Want to Edit it?</th>
+                        <th id="titleRow">Want to Delete it?</th>
+                    {% endif %}
+
+                </tr>
+
+                {% for staffs  in staff %}
+                    <tr>
+                        <th>{{ staffs.id }}</th>
+                        <th>{{ staffs.aName }}</th>
+                        <td style="background-color: inherit">{{ staffs.aPassword }}</td>
+
+                        {% if username == 'admin' %}
+                            <th><a style="color: lightcoral" href="/index.php?action=editStaff&id={{ staffs.id }}">Edit</a></th>
+                            <th><a style="color: lightcoral" href="/index.php?action=deleteStaff&id={{ staffs.id }}">Delete</a></th>
+                        {% endif %}
+
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+            <br>
+            <br>
+
+    {% if username == 'admin' %}
+            <table>
+                <tr>
+                    <th>Create Staff:</th>
+                    <th><a style="color: lightcoral" href="/index.php?action=createStaff">Create</a></th>
+                </tr>
+            </table>
+        {% endif %}
+
+        </section>
+
+    </div>
+
+{% endblock %}

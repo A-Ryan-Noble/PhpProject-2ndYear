@@ -1,0 +1,81 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% elseif username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% else %}
+
+    {% block accountPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "left_side">
+
+            <h2>Products:</h2>
+            {% if username != '' %}
+                {#  Will go back to the  logged in page   #}
+                <p>
+                    <a href="/index.php?action=loggedIn">Go Back to {{ username }}  page</a>
+                </p>
+            {% endif %}
+
+            <table>
+
+                <tr>
+                    <th id="titleRow">ID</th>
+                    <th id="titleRow">Image</th>
+                    <th id="titleRow">Description</th>
+                    <th id="titleRow">Price</th>
+
+                    {% if username != '' %}
+                        <th id="titleRow">Want to Edit it?</th>
+                        <th id="titleRow">Want to Delete it?</th>
+                    {% endif %}
+
+                    <th id="titleRow">View it?</th>
+                </tr>
+
+                {% for product  in products %}
+                    <tr>
+                        <th>{{ product.id }}</th>
+                        <th><img src="{{ product.image }}" alt="Image missing" height = "150px"></th>
+                        <th>{{ product.description }}</th>
+                        <th>€{{ product.price }}</th>
+
+                        {% if username != '' %}
+                            <th><a style="color: lightcoral" href="/index.php?action=editProduct&id={{ product.id }}">Edit</a></th>
+                            <th><a style="color: lightcoral" href="/index.php?action=deleteProduct&id={{ product.id }}">Delete</a></th>
+                        {% endif %}
+                        <th><a style="color: lightcoral" href="/index.php?action=productShow&id={{ product.id }}">View</a></th>
+
+                    </tr>
+                {% endfor %}
+
+            </table>
+
+            <br>
+            <br>
+
+            <table>
+                {% if username != '' %}
+                    <tr>
+                        <th>Create Product:</th>
+                        <th><a style="color: lightcoral" href="/index.php?action=createProduct">Create</a></th>
+                    </tr>
+                {% endif %}
+            </table>
+
+        </section>
+
+    </div>
+
+{% endblock %}

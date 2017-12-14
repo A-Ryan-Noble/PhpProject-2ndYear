@@ -1,0 +1,57 @@
+{% extends '_template.html.twig' %}
+
+{% if username == 'admin' %}
+
+    {% block adminAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% if username == 'staff' %}
+
+    {% block staffAccountsPage %} current_page {% endblock %}
+
+{% endif %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "top">
+
+            <h4>Will try and delete the product.</h4>
+
+        </section>
+
+    </div>
+
+    <div class = "column_container">
+
+        <section class = "middle">
+
+            <table>
+
+                <tr>
+                    <th id="titleRow">Item's ID</th>
+                    <th id="titleRow">Item's Image</th>
+                    <th id="titleRow">Item's Description</th>
+                    <th id="titleRow">Item's Price</th>
+                </tr>
+
+                <tr>
+                    <th>{{ products.id }}</th>
+                    <th><img src="{{ products.image }}" alt="Product Image missing" height = "150px"></th>
+                    <th>{{ products.description }}</th>
+                    <th>€{{ products.price }}</th>
+                </tr>
+
+            </table>
+
+            <br>
+
+            <input type="submit" value="Delete" onclick="location.href='index.php?action=productDelete'">
+
+        </section>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends '_template.html.twig' %}
+
+{% block merchandisePage %} current_page {% endblock %}
+
+{% block main %}
+
+    <div class = "column_container">
+
+        <section class = "left_side">
+
+            <h2> Store </h2>
+
+            <p>Here are some of products from their merchandise page, for you browsing:</p>
+
+            <table>
+
+                <tr>
+                    <th id="titleRow">Item</th>
+                    <th id="titleRow">Image</th>
+                    <th id="titleRow">Quantity</th>
+                    <th id="titleRow">Description</th>
+                    <th id="titleRow">Price</th>
+                </tr>
+
+                <tr>
+                    <th>Carnival T-Shirt</th>
+                    <td><img src= "images/carnival_T-Shirt.jpg" alt = "carnival T-Shirt"></td>
+                    <th><input type = "number" id= "carnivalAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>Black cotton T-Shirt with white text</th>
+                    <th>&euro;23.99</th>
+                </tr>
+
+                <tr>
+                    <th>Doll T-Shirt</th>
+                    <td><img src= "images/doll_T-Shirt.jpg" alt = "Doll T-Shirt"></td>
+                    <th><input type = "number" id= "dollAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>White cotton T-Shirt with hollowed white text <br> above and below a picture of a statue</th>
+                    <th>&euro;23.99</th>
+                </tr>
+
+                <tr>
+                    <th>Key Ring</th>
+                    <td><img src= "images/official_Biffytartan_Key_Ring.jpg" alt = "Official key ring"></td>
+                    <th><input type = "number" id= "keyAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>Key Ring with clip accessory</th>
+                    <th>&euro;19.99</th>
+                </tr>
+
+                <tr>
+                    <th>Late Guest T-Shirt</th>
+                    <td><img src= "images/late_Guests_T-Shirt .jpg" alt = "Late Guest T-Shirt"></td>
+                    <th><input type = "number" id= "lateGuestAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>White cotton T-Shirt with a group of skeletons<br>sweeping up</th> {# GET THE DESCIPTION FROM THE DATABASE#}
+                    <th>&euro;23.99</th>
+                </tr>
+
+                <tr>
+                    <th>Faces Tour T-Shirt</th>
+                    <td><img src= "images/faces_Tour_T-Shirt.jpg" alt = "Faces Tour T-Shirt"></td>
+                    <th><input type = "number" id= "FacesTourTAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>White cotton T-Shirt with the group member's<br>faces on the front.<br> Tour dates & locations on the back</th>
+                    <th>&euro;23.99</th>
+                </tr>
+
+                <tr>
+                    <th>Mon The Biff Tye Dye T-Shirt</th> {# GET THE TITLE (DESCIPTION) FROM THE DATABASE#}
+                    <td><img src= "images/mon_The_Biff_Tye_Dye_T-Shirt.jpg" alt = "hat"></td>
+                    <th><input type = "number" id= "TyeDyeAmount" min= "0"  onchange = "calculate()" autofocus></th>
+                    <th>Black cotton T-Shirt with splats red <br> circle under white text </th>
+                    <th>&euro;29.99</th>
+                </tr>
+
+            </table>
+
+            <br>
+            <p>
+                Your total is: <input type ="text" id = "TotalAmount" onchange="calculate()" size = "10" readonly>
+                <input type="submit" value="Submit" onclick="alertUser()">
+                <input type = "reset" value = "Reset" onclick="resetPage()">
+            </p>
+
+        </section>
+
+    </div>
+
+{% endblock %}
